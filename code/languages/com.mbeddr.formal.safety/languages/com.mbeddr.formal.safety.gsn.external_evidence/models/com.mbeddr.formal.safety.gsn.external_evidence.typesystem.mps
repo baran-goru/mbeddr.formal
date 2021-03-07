@@ -35,9 +35,6 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
-      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -49,9 +46,6 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
-      <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
-        <child id="1068580123156" name="expression" index="3clFbG" />
-      </concept>
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
@@ -60,14 +54,10 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
-      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
-        <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -75,10 +65,6 @@
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
-      </concept>
-      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
-        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
-        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="3093926081414150598" name="jetbrains.mps.baseLanguage.structure.MultipleCatchClause" flags="ng" index="3uVAMA">
         <child id="8276990574895933173" name="catchBody" index="1zc67A" />
@@ -223,52 +209,6 @@
                     </node>
                     <node concept="9aQIb" id="2QkJsC6FV69" role="9aQIa">
                       <node concept="3clFbS" id="2QkJsC6FV6a" role="9aQI4">
-                        <node concept="3clFbJ" id="7PtOUCoE6DQ" role="3cqZAp">
-                          <node concept="3clFbS" id="7PtOUCoE6DS" role="3clFbx">
-                            <node concept="3clFbF" id="7PtOUCoE6JR" role="3cqZAp">
-                              <node concept="2OqwBi" id="7PtOUCoE6JO" role="3clFbG">
-                                <node concept="10M0yZ" id="7PtOUCoE6JP" role="2Oq$k0">
-                                  <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                                  <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
-                                </node>
-                                <node concept="liA8E" id="7PtOUCoE6JQ" role="2OqNvi">
-                                  <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
-                                  <node concept="3cpWs3" id="7PtOUCoE892" role="37wK5m">
-                                    <node concept="37vLTw" id="7PtOUCoE8dw" role="3uHU7w">
-                                      <ref role="3cqZAo" node="2QkJsC6FPoF" resolve="md5Hex" />
-                                    </node>
-                                    <node concept="3cpWs3" id="7PtOUCoE7WZ" role="3uHU7B">
-                                      <node concept="3cpWs3" id="7PtOUCoE7Gy" role="3uHU7B">
-                                        <node concept="Xl_RD" id="7PtOUCoE6Lp" role="3uHU7B">
-                                          <property role="Xl_RC" value="########### hashcodes diverge - old is: " />
-                                        </node>
-                                        <node concept="37vLTw" id="7PtOUCoE7Kh" role="3uHU7w">
-                                          <ref role="3cqZAo" node="2QkJsC6FGQH" resolve="hashCode" />
-                                        </node>
-                                      </node>
-                                      <node concept="Xl_RD" id="7PtOUCoE7ZK" role="3uHU7w">
-                                        <property role="Xl_RC" value=" new is: " />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3fqX7Q" id="7PtOUCoE6HY" role="3clFbw">
-                            <node concept="2OqwBi" id="7PtOUCoE6I0" role="3fr31v">
-                              <node concept="37vLTw" id="7PtOUCoE6I1" role="2Oq$k0">
-                                <ref role="3cqZAo" node="2QkJsC6FPoF" resolve="md5Hex" />
-                              </node>
-                              <node concept="liA8E" id="7PtOUCoE6I2" role="2OqNvi">
-                                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object)" resolve="equals" />
-                                <node concept="37vLTw" id="7PtOUCoE6I3" role="37wK5m">
-                                  <ref role="3cqZAo" node="2QkJsC6FGQH" resolve="hashCode" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
                         <node concept="2Mj0R9" id="2QkJsC6FV9q" role="3cqZAp">
                           <node concept="2OqwBi" id="4MlXWpxanmB" role="2MkoU_">
                             <node concept="37vLTw" id="2QkJsC6FVaC" role="2Oq$k0">
@@ -281,33 +221,8 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3cpWs3" id="7PtOUCoEdHS" role="2MkJ7o">
-                            <node concept="Xl_RD" id="7PtOUCoEdPA" role="3uHU7w">
-                              <property role="Xl_RC" value="'" />
-                            </node>
-                            <node concept="3cpWs3" id="7PtOUCoEcL6" role="3uHU7B">
-                              <node concept="3cpWs3" id="7PtOUCoEcL8" role="3uHU7B">
-                                <node concept="3cpWs3" id="7PtOUCoEcL9" role="3uHU7B">
-                                  <node concept="3cpWs3" id="7PtOUCoEdVa" role="3uHU7B">
-                                    <node concept="Xl_RD" id="2QkJsC6FVXF" role="3uHU7B">
-                                      <property role="Xl_RC" value="document changed since last review " />
-                                    </node>
-                                    <node concept="Xl_RD" id="7PtOUCoEcLa" role="3uHU7w">
-                                      <property role="Xl_RC" value="########### hashcodes diverge - old is: '" />
-                                    </node>
-                                  </node>
-                                  <node concept="37vLTw" id="7PtOUCoEcLb" role="3uHU7w">
-                                    <ref role="3cqZAo" node="2QkJsC6FGQH" resolve="hashCode" />
-                                  </node>
-                                </node>
-                                <node concept="Xl_RD" id="7PtOUCoEcLc" role="3uHU7w">
-                                  <property role="Xl_RC" value="' new is: '" />
-                                </node>
-                              </node>
-                              <node concept="37vLTw" id="7PtOUCoEcL7" role="3uHU7w">
-                                <ref role="3cqZAo" node="2QkJsC6FPoF" resolve="md5Hex" />
-                              </node>
-                            </node>
+                          <node concept="Xl_RD" id="2QkJsC6FVXF" role="2MkJ7o">
+                            <property role="Xl_RC" value="document changed since last review (new and saved checksums diverge)" />
                           </node>
                           <node concept="1YBJjd" id="2QkJsC6FW64" role="1urrMF">
                             <ref role="1YBMHb" node="2QkJsC6FGrE" resolve="externalEvidenceDocument" />
