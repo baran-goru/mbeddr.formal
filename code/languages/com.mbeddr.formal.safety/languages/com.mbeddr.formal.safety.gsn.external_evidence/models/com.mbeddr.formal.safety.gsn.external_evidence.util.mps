@@ -63,6 +63,7 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534604311" name="jetbrains.mps.baseLanguage.structure.ByteType" flags="in" index="10PrrI" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534760951" name="jetbrains.mps.baseLanguage.structure.ArrayType" flags="in" index="10Q1$e">
         <child id="1070534760952" name="componentType" index="10Q1$1" />
@@ -574,6 +575,25 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="7PtOUCoEwAK" role="3cqZAp">
+          <node concept="3cpWsn" id="7PtOUCoEwAL" role="3cpWs9">
+            <property role="TrG5h" value="allBytes" />
+            <node concept="10Q1$e" id="7PtOUCoEwh0" role="1tU5fm">
+              <node concept="10PrrI" id="7PtOUCoEwh3" role="10Q1$1" />
+            </node>
+            <node concept="2YIFZM" id="7PtOUCoEwAM" role="33vP2m">
+              <ref role="1Pybhc" to="eoo2:~Files" resolve="Files" />
+              <ref role="37wK5l" to="eoo2:~Files.readAllBytes(java.nio.file.Path)" resolve="readAllBytes" />
+              <node concept="2YIFZM" id="7PtOUCoEwAN" role="37wK5m">
+                <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                <node concept="37vLTw" id="7PtOUCoEwAO" role="37wK5m">
+                  <ref role="3cqZAo" node="2QkJsC6G0gQ" resolve="path" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="7PtOUCoEiAY" role="3cqZAp">
           <node concept="2OqwBi" id="7PtOUCoEiAZ" role="3clFbG">
             <node concept="10M0yZ" id="7PtOUCoEiB0" role="2Oq$k0">
@@ -586,22 +606,66 @@
                 <node concept="Xl_RD" id="7PtOUCoEiB3" role="3uHU7B">
                   <property role="Xl_RC" value="-------- all bytes: " />
                 </node>
-                <node concept="2YIFZM" id="7PtOUCoEjby" role="3uHU7w">
-                  <ref role="1Pybhc" to="eoo2:~Files" resolve="Files" />
-                  <ref role="37wK5l" to="eoo2:~Files.readAllBytes(java.nio.file.Path)" resolve="readAllBytes" />
-                  <node concept="2YIFZM" id="7PtOUCoEjbz" role="37wK5m">
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <node concept="37vLTw" id="7PtOUCoEjb$" role="37wK5m">
-                      <ref role="3cqZAo" node="2QkJsC6G0gQ" resolve="path" />
-                    </node>
+                <node concept="37vLTw" id="7PtOUCoEwAP" role="3uHU7w">
+                  <ref role="3cqZAo" node="7PtOUCoEwAL" resolve="allBytes" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7PtOUCoEtbi" role="3cqZAp">
+          <node concept="2OqwBi" id="7PtOUCoEtbf" role="3clFbG">
+            <node concept="10M0yZ" id="7PtOUCoEtbg" role="2Oq$k0">
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
+            </node>
+            <node concept="liA8E" id="7PtOUCoEtbh" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+              <node concept="Xl_RD" id="7PtOUCoEtlW" role="37wK5m">
+                <property role="Xl_RC" value="&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7PtOUCoEv$A" role="3cqZAp">
+          <node concept="2OqwBi" id="7PtOUCoEv$z" role="3clFbG">
+            <node concept="10M0yZ" id="7PtOUCoEv$$" role="2Oq$k0">
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
+            </node>
+            <node concept="liA8E" id="7PtOUCoEv$_" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+              <node concept="2OqwBi" id="7PtOUCoEvKA" role="37wK5m">
+                <node concept="2YIFZM" id="7PtOUCoEvKB" role="2Oq$k0">
+                  <ref role="1Pybhc" to="33ny:~Base64" resolve="Base64" />
+                  <ref role="37wK5l" to="33ny:~Base64.getEncoder()" resolve="getEncoder" />
+                </node>
+                <node concept="liA8E" id="7PtOUCoEvKC" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~Base64$Encoder.encodeToString(byte[])" resolve="encodeToString" />
+                  <node concept="37vLTw" id="7PtOUCoEx36" role="37wK5m">
+                    <ref role="3cqZAo" node="7PtOUCoEwAL" resolve="allBytes" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7PtOUCoEiei" role="3cqZAp" />
+        <node concept="3clFbH" id="7PtOUCoEtJo" role="3cqZAp" />
+        <node concept="3clFbF" id="7PtOUCoEukS" role="3cqZAp">
+          <node concept="2OqwBi" id="7PtOUCoEukP" role="3clFbG">
+            <node concept="10M0yZ" id="7PtOUCoEukQ" role="2Oq$k0">
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.err" resolve="err" />
+            </node>
+            <node concept="liA8E" id="7PtOUCoEukR" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+              <node concept="Xl_RD" id="7PtOUCoEuwp" role="37wK5m">
+                <property role="Xl_RC" value="&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="7PtOUCoEviC" role="3cqZAp" />
         <node concept="3cpWs8" id="GA19r16O$t" role="3cqZAp">
           <node concept="3cpWsn" id="GA19r16O$u" role="3cpWs9">
             <property role="TrG5h" value="md" />
