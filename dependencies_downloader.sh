@@ -14,5 +14,6 @@ unzip -q mbeddr_platform.zip -d dependencies
 
 echo "Downloading MPS"
 #curl https://projects.itemis.de/nexus/content/repositories/mbeddr/com/jetbrains/mps/2020.3.4/mps-2020.3.4.zip --output mps.zip
-curl http://download.jetbrains.com/mps/2020.3/MPS-2020.3.4.zip --output mps.zip
-unzip -q mps.zip -d mps
+curl -L https://download.jetbrains.com/mps/2020.3/MPS-2020.3.4.zip --output mps.zip
+unzip -q mps.zip 
+mv "MPS 2020.3" mps
