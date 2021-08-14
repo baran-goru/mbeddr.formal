@@ -1,5 +1,5 @@
 
-name: FASTEN_CI
+name: FASTEN_CI_Manual_Dependencies_Download
 
 on: [push, pull_request]
 
@@ -41,7 +41,7 @@ jobs:
     - name: Build FASTEN
       uses: eskatos/gradle-command-action@v1.3.3
       with: 
-        arguments: -b build_ci.gradle build_fasten_safety_distribution -Pgpr.user=${{github.actor}} -Pgpr.token=${{ secrets.GITHUB_TOKEN }}
+        arguments: -b build_ci.gradle build_fasten_safety_distribution -Dorg.gradle.internal.http.connectionTimeout=650000 -Dorg.gradle.internal.http.socketTimeout=650000 -Pgpr.user=${{github.actor}} -Pgpr.token=${{ secrets.GITHUB_TOKEN }}
         wrapper-cache-enabled: true
         dependencies-cache-enabled: true
         dependencies-cache-key: gradle/dependency-locks/**
