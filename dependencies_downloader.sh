@@ -7,11 +7,11 @@ curl https://projects.itemis.de/nexus/content/repositories/mbeddr/com/jetbrains/
 mkdir jbrDownload
 tar xfz jbr.tgz --directory jbrDownload
 
-echo "Downloading MPS"
-curl https://projects.itemis.de/nexus/content/repositories/mbeddr/com/jetbrains/mps/2020.3.4/mps-2020.3.4.zip --output mps.zip
-unzip -q mps.zip -d mps
-
 echo "Downloading mbeddr-platform"
 curl https://projects.itemis.de/nexus/content/repositories/mbeddr/com/mbeddr/platform/2020.3.22951.af80c1c/platform-2020.3.22951.af80c1c.zip --output mbeddr_platform.zip
 mkdir dependencies
 unzip -q mbeddr_platform.zip -d dependencies
+
+echo "Downloading MPS"
+curl https://projects.itemis.de/nexus/content/repositories/mbeddr/com/jetbrains/mps/2020.3.4/mps-2020.3.4.zip --output mps.zip
+unzip -q mps.zip -d mps
