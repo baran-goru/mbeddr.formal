@@ -3,7 +3,8 @@
 mkdir build
 cd build
 echo "Downloading JBR"
-curl https://projects.itemis.de/nexus/content/repositories/mbeddr/com/jetbrains/jdk/jbr/11_0_9-b944.49/jbr-11_0_9-b944.49-windows-x64.tgz --output jbr.tgz
+#curl https://projects.itemis.de/nexus/content/repositories/mbeddr/com/jetbrains/jdk/jbr/11_0_9-b944.49/jbr-11_0_9-b944.49-windows-x64.tgz --output jbr.tgz
+curl https://projects.itemis.de/nexus/content/repositories/mbeddr/com/jetbrains/jdk/jbr/11_0_9-b944.49/jbr-11_0_9-b944.49-linux-x64.tgz --output jbr.tgz
 mkdir jbrDownload
 tar xfz jbr.tgz --directory jbrDownload
 
