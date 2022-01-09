@@ -280,7 +280,7 @@ task run_all_tests(type: TestLanguages, dependsOn: configureJava) {
 
 check.dependsOn run_all_tests
 
-task package_formal(type: Zip /*, dependsOn: build_formal_languages*/) {
+task package_formal(type: Zip, dependsOn: build_formal_languages) {
     archiveBaseName = 'com.mbeddr.formal'
     from artifactsDir
     include 'com.mbeddr.formal.languages/**'
@@ -290,15 +290,15 @@ assemble.dependsOn package_formal
 
 publishing {
     repositories {
-        /*maven {
-            url project.publishingRepository
-            if (project.hasProperty('nexusUsername')) {
-                credentials {
-                    username project.nexusUsername
-                    password project.nexusPassword
-                }
-            }
-        }*/
+        //maven {
+        //    url project.publishingRepository
+        //    if (project.hasProperty('nexusUsername')) {
+        //        credentials {
+        //            username project.nexusUsername
+        //            password project.nexusPassword
+        //        }
+        //    }
+        //}
 		maven {
 			name = "GitHubPackages"
 			url = uri("https://maven.pkg.github.com/mbeddr/mbeddr.formal")
