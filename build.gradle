@@ -31,13 +31,13 @@ dependencyLocking {
     lockAllConfigurations()
 }
 
-apply plugin: 'download-jbr'
+//apply plugin: 'download-jbr'
 
-ext.jbrVers = '11_0_10-b1145.96'
+//ext.jbrVers = '11_0_10-b1145.96'
 
-downloadJbr {
-    jbrVersion = jbrVers
-}
+//downloadJbr {
+//    jbrVersion = jbrVers
+//}
 
 // detect if we are in a CI build
 if (project.hasProperty("forceCI")) {
@@ -117,18 +117,18 @@ configurations {
     languageLibs
     // includes also junit tasks support
     antLib
-    jbrWin
-    jbrMac
-    jbrLinux
+    //jbrWin
+    //jbrMac
+    //jbrLinux
 }
 
 dependencies {
     mps "com.jetbrains:mps:$mpsVersion"
     languageLibs "com.mbeddr:platform:$mbeddrVersion"
     antLib "org.apache.ant:ant-junit:1.10.6"
-    jbrWin "com.jetbrains.jdk:jbr:$jbrVers:windows-x64@tgz"
-    jbrMac "com.jetbrains.jdk:jbr:$jbrVers:osx-x64@tgz"
-    jbrLinux "com.jetbrains.jdk:jbr:$jbrVers:linux-x64@tgz"
+    //jbrWin "com.jetbrains.jdk:jbr:$jbrVers:windows-x64@tgz"
+    //jbrMac "com.jetbrains.jdk:jbr:$jbrVers:osx-x64@tgz"
+    //jbrLinux "com.jetbrains.jdk:jbr:$jbrVers:linux-x64@tgz"
 }
 
 repositories {
