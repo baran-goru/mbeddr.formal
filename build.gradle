@@ -4,16 +4,17 @@ import de.itemis.mps.gradle.*
 buildscript {
     repositories {
         mavenCentral()
-        def githubRepos = ["https://maven.pkg.github.com/mbeddr/*"]
-        for (def repo in githubRepos) {
-            maven {
-                url = uri(repo)
-                credentials {
-                    username = project.findProperty("github_username") ?: System.getenv("GITHUB_ACTOR")
-                    password = project.findProperty("github_token") ?: System.getenv("GITHUB_TOKEN")
-                }
-            }
-        }
+        maven { url 'https://projects.itemis.de/nexus/content/repositories/mbeddr' }
+        //def githubRepos = ["https://maven.pkg.github.com/mbeddr/*"]
+        //for (def repo in githubRepos) {
+        //    maven {
+        //        url = uri(repo)
+        //        credentials {
+        //            username = project.findProperty("github_username") ?: System.getenv("GITHUB_ACTOR")
+        //            password = project.findProperty("github_token") ?: System.getenv("GITHUB_TOKEN")
+        //        }
+        //    }
+        //}
     }
     dependencies {
         classpath 'de.itemis.mps:mps-gradle-plugin:1.5.+'
@@ -280,7 +281,7 @@ task run_all_tests(type: TestLanguages, dependsOn: configureJava) {
 
 check.dependsOn run_all_tests
 
-task package_formal(type: Zip, dependsOn: build_formal_languages) {
+task package_formal(type: Zip/*, dependsOn: build_formal_languages*/) {
     archiveBaseName = 'com.mbeddr.formal'
     from artifactsDir
     include 'com.mbeddr.formal.languages/**'
