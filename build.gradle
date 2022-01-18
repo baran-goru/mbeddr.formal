@@ -322,7 +322,7 @@ publishing {
             }
         }
         FASTENSafetyLanguages(MavenPublication) {
-            groupId 'com.mbeddr'
+            groupId 'fasten'
             artifactId 'assurance'
             artifact package_assurance
             pom.withXml {
