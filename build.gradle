@@ -321,7 +321,7 @@ publishing {
                 }
             }
         }
-        NuSMVLanguages(MavenPublication) {
+        FASTENSafetyLanguages(MavenPublication) {
             groupId 'com.mbeddr'
             artifactId 'assurance'
             artifact package_assurance
