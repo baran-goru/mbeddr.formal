@@ -95,6 +95,9 @@ jobs:
       with:
         timeZone: 2
         format: 'YYYY-MM-DD-HH-mm'
+    - name: Debug Directory Layout
+      run: |
+        ls -al build/artifacts/    
     - name: Archive distribution
       uses: actions/upload-artifact@v2
       with:
