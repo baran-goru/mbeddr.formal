@@ -170,7 +170,7 @@ ext.buildScriptClasspath = project.configurations.antLib.fileCollection { true }
 
 def artifactsDir = file("$buildDir/artifacts")
 def dependenciesDir = file("$buildDir/dependencies")
-
+def jdkDir = file("$buildDir/jdkDir")
 
 // ___________________ utilities ___________________
 
