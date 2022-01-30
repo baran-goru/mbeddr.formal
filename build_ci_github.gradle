@@ -239,9 +239,27 @@ task resolveJBR_Win(type: Copy) {
     }
 }
 
-task package_fasten_safety_distribution_win(type: Zip, dependsOn: [resolveJBR_Win, build_fasten_safety_distribution]) {
+task unpackDistribution(type: Copy) {
+   from zipTree("$artifactsDir/com.mbeddr.formal.safetyDistribution/fasten-2020.3-SNAPSHOT.zip")
+   into("$artifactsDir/com.mbeddr.formal.safetyDistribution/tmp") 
+}
+
+task deleteJBR(type: Delete, dependsOn: unpackDistribution) {
+   delete "$artifactsDir/com.mbeddr.formal.safetyDistribution/tmp/fasten-2020.3-SNAPSHOT/jbr"
+}
+
+task removeJBR(type: Zip, dependsOn: deleteJBR) {
+   outputs.upToDateWhen { false }
+   from "$artifactsDir/com.mbeddr.formal.safetyDistribution/tmp/fasten-2020.3-SNAPSHOT"
+   include '*'
+   include '*/*' 
+   archiveName 'fasten-2020.3-SNAPSHOT_with_removed_JBR.zip'
+   destinationDir(file("$artifactsDir/com.mbeddr.formal.safetyDistribution"))
+}
+
+task package_fasten_safety_distribution_win(type: Zip, dependsOn: [resolveJBR_Win, build_fasten_safety_distribution, removeJBR]) {
     baseName "fasten-2020.3-SNAPSHOT-Win"
-    from(zipTree("$artifactsDir/com.mbeddr.formal.safetyDistribution/fasten-2020.3-SNAPSHOT.zip"))
+    from(zipTree("$artifactsDir/com.mbeddr.formal.safetyDistribution/fasten-2020.3-SNAPSHOT_with_removed_JBR.zip"))
     from(tarTree(resources.gzip("$jdkDir/jbr-windows-x64.tgz")))
 }
 
