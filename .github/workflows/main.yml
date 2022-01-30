@@ -97,7 +97,7 @@ jobs:
         format: 'YYYY-MM-DD-HH-mm'
     - name: Debug Directory Layout
       run: |
-        ls -al build/artifacts/    
+        ls -alR build/artifacts/com.mbeddr.formal.safetyDistribution    
     - name: Archive distribution
       uses: actions/upload-artifact@v2
       with:
