@@ -230,6 +230,21 @@ task build_fasten_safety_distribution(type: BuildLanguages, dependsOn: [build_fo
     script new File("$buildDir/scripts/build-fasten-safe-distribution.xml")
 }
 
+task resolveJBR_Win(type: Copy) {
+    from { configurations.jbrWin.resolve() }
+    into jdkDir
+    rename { filename ->
+        def resolvedArtifact = configurations.jbrWin.resolvedConfiguration.resolvedArtifacts.find { ResolvedArtifact ra -> ra.file.name == filename }
+        return resolvedArtifact.name + "-" + resolvedArtifact.classifier + "." + resolvedArtifact.extension
+    }
+}
+
+task package_fasten_safety_distribution_win(type: Zip, dependsOn: [resolveJBR_Win, build_fasten_safety_distribution]) {
+    baseName "fasten-2020.3-SNAPSHOT-Win"
+    from(zipTree("$artifactsDir/com.mbeddr.formal.safetyDistribution/fasten-2020.3-SNAPSHOT.zip"))
+    from(tarTree(resources.gzip("$jdkDir/jbr-windows-x64.tgz")))
+}
+
 task run_smv_tests(type: TestLanguages) { //, dependsOn: build_formal_languages) {
     description "Will execute all tests from command line"
     print "mbeddr.formal.home = " + rootDir;
